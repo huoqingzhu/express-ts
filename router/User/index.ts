@@ -5,6 +5,7 @@ router.get('/', (req, res) => {
 })
 router.post('/login', (req, res) => {
   const token ="UserPox"
+  
   res.json({token})
 })
 export default  router;

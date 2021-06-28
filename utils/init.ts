@@ -22,3 +22,5 @@ export const emptyFile=(path:string)=>{
 const defpath=path.join(__dirname,'../');
 console.log(defpath)
 emptyFile(defpath+'/uploads')
+console.log(__dirname)
+// emptyFile(defpath+'/geo')

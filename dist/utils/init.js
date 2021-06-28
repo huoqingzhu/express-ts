@@ -22,3 +22,4 @@ exports.emptyFile = (path) => {
 const defpath = path.join(__dirname, '../');
 console.log(defpath);
 exports.emptyFile(defpath + '/uploads');
+console.log(__dirname);

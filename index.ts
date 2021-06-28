@@ -1,11 +1,12 @@
 import express = require('express')
 import bodyParser = require('body-parser');
-
 import Upload from './router/Upload/index'
 import User from './router/User/index'
+import Map from './router/Map/index'
 import "./utils/init"//初始化 
+import './model/mongo'
 const app = express()
-const port = 8888
+const port = 9000
 // app.use(express.static(__dirname + '/public/'));
 app.use(express.json())
 app.all('*', function (req, res, next) {
@@ -26,10 +27,11 @@ app.get('/api/test', (req, res) => {
   console.log("执行了我")
   res.json( {name:'霍庆祝',age:24,msg:0})
 })
-
-
-app.use('/upload', Upload);
+// 上传接口
+app.use('/api/upload', Upload);
+// 用户接口
 app.use('/api/user',User)
+app.use('/api/map',Map)
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
