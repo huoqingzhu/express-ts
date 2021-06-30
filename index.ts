@@ -6,7 +6,7 @@ import Map from './router/Map/index'
 import "./utils/init"//初始化 
 import './model/mongo'
 const app = express()
-const port = 9000
+const port = 8888
 // app.use(express.static(__dirname + '/public/'));
 app.use(express.json())
 app.all('*', function (req, res, next) {

@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     res.json([{ username: 'admin', password: '123456' }]);
 });
 router.post('/login', (req, res) => {
-    const token = "UserPox";
+    const token = "huoqingzu";
     res.json({ token });
 });
 exports.default = router;

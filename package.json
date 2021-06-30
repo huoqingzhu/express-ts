@@ -1,6 +1,9 @@
 {
   "name": "zhi-hu",
   "version": "1.0.0",
+  "nodemonConfig": {
+    "ignore": ["geo/*", "docs/*"]
+  },
   "description": "",
   "main": "index.ts",
   "scripts": {

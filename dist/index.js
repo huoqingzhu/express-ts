@@ -8,7 +8,7 @@ const index_3 = require("./router/Map/index");
 require("./utils/init");
 require("./model/mongo");
 const app = express();
-const port = 9000;
+const port = 8888;
 app.use(express.json());
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
