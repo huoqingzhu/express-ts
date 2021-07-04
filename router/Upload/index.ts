@@ -24,17 +24,16 @@ router.post('/img', upload.any(), (req, res) => {
 		}
 	})
 })
+/**
+ * Binary 文件上传
+ */
 router.post('/binary',(req, res, next) => {
     console.log(req.query);
     let buffers = [];
     req.on('data',(trunk) => {
         buffers.push(trunk);
-        console.log(trunk)
     }).on('end',async () => {
         const buffer= Buffer.concat(buffers);
-        console.log('====================================');
-        console.log(buffer);
-        console.log('====================================');
         fs.writeFileSync(FileName+req.query.name, buffer);
         res.json({path:FileName+req.query.name,err:0})
     }).on('close', () => {

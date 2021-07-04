@@ -1,7 +1,13 @@
-// import Mongo = require('mongodb');
-// var url = "mongodb://localhost:27017/runoob";
-// Mongo.MongoClient.connect(url, function(err, db) {
-//   if (err) throw err;
-//   console.log("数据库已创建!");
-//   db.close();
-// });
+const db = require('../config/key').mongoURL2;
+const mongoose = require('mongoose')
+mongoose.connect(db, {
+    user: 'root',
+    pass: '123456',
+    useNewUrlParser: true,
+})
+    .then(() => {
+        console.log(`数据库连接成功${db}`);
+    })
+    .catch(err => {
+        console.log("连接数据库失败");
+    })
